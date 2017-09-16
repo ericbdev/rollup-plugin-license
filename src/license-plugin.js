@@ -56,6 +56,9 @@ class LicensePlugin {
     // SourceMap can now be disable/enable on the plugin.
     this._sourceMap = options.sourceMap !== false && options.sourcemap !== false;
 
+    // Block comments can be disabled
+    this._disableBlock = options.disableBlock || options.disableBlock === false;
+
     // This is a cache storing a directory path to associated package.
     // This is an improvement to avoid looking for package information for
     // already scanned directory.
@@ -175,10 +178,10 @@ class LicensePlugin {
       const dependencies = _.values(this._dependencies);
       let text = tmpl({_, moment, pkg, dependencies});
 
-      // Make a block comment if needed
+      // Make a block comment if needed and not disabled
       const trimmedBanner = text.trim();
       const start = trimmedBanner.slice(0, 3);
-      if (start !== '/**' && start !== '/*!') {
+      if ((start !== '/**' && start !== '/*!') && !this._disableBlock) {
         text = generateBlockComment(text);
       }
 

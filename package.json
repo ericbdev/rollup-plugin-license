@@ -20,13 +20,13 @@
   ],
   "author": "Mickael Jeanroy <mickael.jeanroy@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/mjeanroy/rollup-plugin-license",
+  "homepage": "https://github.com/ericbdev/rollup-plugin-license",
   "bugs": {
-    "url": "https://github.com/mjeanroy/rollup-plugin-license/issues"
+    "url": "https://github.com/ericbdev/rollup-plugin-license/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mjeanroy/rollup-plugin-license"
+    "url": "https://github.com/ericbdev/rollup-plugin-license"
   },
   "dependencies": {
     "commenting": "1.0.4",

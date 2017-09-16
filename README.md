@@ -55,6 +55,22 @@ module.exports = {
 }
 ```
 
+Disable auto-block commenting:
+
+```javascript
+const path = require('path');
+const license = require('rollup-plugin-license');
+
+module.exports = {
+  plugins: [
+    license({
+      disableBlock: true,
+      banner: `// Copyright <%= moment().format('YYYY') %>`,
+    }),
+  ],
+}
+```
+
 ## Banner file
 
 The banner file can be a text file and it will be converted to a block comment automatically if needed.
